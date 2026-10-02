@@ -39,58 +39,69 @@
       margin: 0 0 1rem;
     }
 
-    .intro {
+    .achtergrond {
       margin: 0 0 2rem;
       color: var(--muted);
     }
 
-    .intro p {
+    .achtergrond p {
       margin: 0 0 0.85rem;
     }
 
-    .intro p:last-child {
+    .achtergrond p:last-child {
       margin-bottom: 0;
     }
 
-    section {
-      margin: 0 0 2rem;
+    ol.stappen {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
     }
 
-    section:last-of-type {
-      margin-bottom: 0;
+    .stap {
+      margin: 0;
     }
 
-    h2 {
-      font-size: 1.15rem;
+    .stap h2 {
+      font-size: 1.05rem;
       font-weight: 700;
-      margin: 0 0 0.75rem;
+      margin: 0 0 0.4rem;
     }
 
-    section p {
+    .stap p {
       margin: 0 0 0.75rem;
       color: var(--muted);
     }
 
-    section p:last-child {
-      margin-bottom: 0;
-    }
-
-    a.scherm-link {
-      display: block;
-      margin-top: 1rem;
-      text-decoration: none;
-      color: inherit;
+    .stap a {
+      color: var(--text);
     }
 
     .scherm {
       display: block;
-      border: 1px solid var(--line);
+      min-height: 10rem;
+      border: 2px dashed var(--line);
       border-radius: 0.25rem;
+      background: var(--slot);
+    }
+
+    a.scherm-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .scherm--beeld {
+      min-height: 0;
+      border: 1px solid var(--line);
       overflow: hidden;
       background: var(--slot);
     }
 
-    .scherm img {
+    .scherm--beeld img {
       display: block;
       width: 100%;
       height: auto;
@@ -101,47 +112,70 @@
   <main>
     <h1>De verkoper, van home naar share-artikel.</h1>
 
-    <div class="intro">
-      <p>Leadtrigger is de tool rond één venture. De verkoper heeft vijf ingangen. Een bedrijf met Page Open gaat naar één share-artikel. Achter dat menu zit admin. Dat is de rest van de tool, en dat lopen we in de demo niet door.</p>
-      <p>Het telt omdat de verkoper bij het aanbod begint, een lijst die op Ready opent, en één artikel per bedrijf. De plekken op dat artikel kunnen leeg zijn. De chip zegt hoe ver het is, niet dat de tekst al gevuld is. News verstuurt niets. Prepare one start research voor één bedrijf.</p>
+    <div class="achtergrond">
+      <p>Leadtrigger is de tool rond één venture. De verkoper heeft vijf ingangen. Home toont het aanbod: offering, ICP, status en sectoren. Share lists, Browse companies, News en Prepare one zijn de andere vier. Browse companies opent op Ready. De verkoper klikt Search. Page is Open of Not ready. Open gaat naar één share-artikel.</p>
+      <p>Het telt omdat hij niet leeg begint. Het artikel heeft plekken voor Why now, Your Brief, What to say, contacten, fit, het bewijs en coaching. Die plekken kunnen leeg zijn. De chip zegt hoe ver het artikel is: Ready, Fit done, Urgency done, Outreach done of Needs research. Niet dat de tekst al gevuld is.</p>
+      <p>Wat er in de demo gebeurt: Home, zoeken, Open, artikel en chip. Share lists, News en Prepare one horen bij de verkoper, maar zijn geen extra stappen in deze doorloop.</p>
+      <p>Achter het verkopersmenu zit de rest. Dat is admin, en dat lopen we nu niet door: watchlists, inbox, request watchlist, venture scores, match, import, cast, ventures en users.</p>
     </div>
 
-    <section>
-      <h2>De verkoper</h2>
-      <p>Home toont het aanbod van de venture: offering, ICP, status en sectoren. Geen bedrijvenlijst.</p>
-      <p>Share lists is een lijst van bundels met ready artikelen, met een publieke pagina en een RSS-link.</p>
-      <p>Browse companies is de bedrijvenlijst. Die opent op Ready. Na Search is Page Open of Not ready.</p>
-      <p>News is één nieuwsbericht met drie vragen: over één bedrijf, past het bij je klanten, nu of later. Er wordt niets verstuurd.</p>
-      <p>Prepare one start research en een artikel voor één bedrijf, op naam en domein.</p>
-    </section>
+    <ol class="stappen">
+      <li class="stap">
+        <h2>1. Home</h2>
+        <p>
+          Zijbalk: Home, of de venture-naam. Route: <code>/</code>.
+          Offering, ICP, status, sectoren.
+          Geen bedrijvenlijst.
+          <a href="https://leadtrigger-news-production.up.railway.app/">Open Home</a>
+        </p>
+        <div class="scherm" aria-label="Lege plek voor scherm Home"></div>
+      </li>
 
-    <section>
-      <h2>Het share-artikel</h2>
-      <p>Eén bedrijf. In de kop: Employees, Fit, Timing en Priority. Plekken voor Why now, Your Brief, What to say, contacten, fit, bewijs en coaching. Die kunnen leeg zijn. De chip op hetzelfde scherm is Ready, Fit done, Urgency done, Outreach done of Needs research. Hier het scherm van IUL SA.</p>
-      <a
-        class="scherm-link"
-        href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41"
-      >
-        <div class="scherm">
-          <img
-            src="share-artikel-iul-sa.png"
-            alt="share-artikel van IUL SA"
-            width="1024"
-            height="570"
-          >
-        </div>
-      </a>
-    </section>
+      <li class="stap">
+        <h2>2. Browse companies</h2>
+        <p>
+          Route: <code>/companies</code>.
+          Opent op Ready. Search.
+          Op de rij: Company, Country, Page, Fit, Urgency, Jev, Sector.
+          Page is Open of Not ready.
+          <a href="https://leadtrigger-news-production.up.railway.app/companies">Open Browse companies</a>
+        </p>
+        <div class="scherm" aria-label="Lege plek voor scherm Browse companies"></div>
+      </li>
 
-    <section>
-      <h2>Admin, niet in de demo</h2>
-      <p>Watchlists, Inbox en Request watchlist zitten in de groep LeadTrigger.</p>
-      <p>Venture scores en Match zitten bij Companies: scores per bedrijf, en bedrijven die erop lijken.</p>
-      <p>Import is de import van bedrijven.</p>
-      <p>Cast is setup, macro outreach, macro signals, macro newsletters, pull and results, HITL review, insights, ops digest en settings.</p>
-      <p>Ventures is alle brains, een nieuwe brain, en wisselen van venture.</p>
-      <p>Admin is users, share feedback, watchlist requests, prepare test, prepare requests, prepared pages en research jobs.</p>
-    </section>
+      <li class="stap">
+        <h2>3. Share-artikel</h2>
+        <p>
+          Open gaat naar <code>/share/article/{sleutel}</code>.
+          In de kop: Employees, Fit, Timing, Priority.
+          Daaronder de plekken, die leeg kunnen zijn.
+          <a href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41">Open share-artikel</a>
+        </p>
+        <a
+          class="scherm-link"
+          href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41"
+        >
+          <div class="scherm scherm--beeld">
+            <img
+              src="share-artikel-iul-sa.png"
+              alt="share-artikel van IUL SA"
+              width="1024"
+              height="570"
+            >
+          </div>
+        </a>
+      </li>
+
+      <li class="stap">
+        <h2>4. Chip op het artikel</h2>
+        <p>
+          Geen reviewed-kolom op de lijst.
+          Het dichtstbij is Page: Open of Not ready.
+          De chip is Ready, Fit done, Urgency done, Outreach done of Needs research.
+        </p>
+        <div class="scherm" aria-label="Lege plek voor chip op het artikel"></div>
+      </li>
+    </ol>
   </main>
 </body>
 </html>
