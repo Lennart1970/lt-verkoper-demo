@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>De verkoper, van home naar share-artikel.</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --line: #999;
+      --bg: #f7f7f5;
+      --slot: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 1.25rem 1rem 3rem;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    main {
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0 0 1rem;
+    }
+
+    .achtergrond {
+      margin: 0 0 2rem;
+      color: var(--muted);
+    }
+
+    ol.stappen {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .stap {
+      margin: 0;
+    }
+
+    .stap h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+
+    .stap p {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+    }
+
+    .stap a {
+      color: var(--text);
+    }
+
+    .scherm {
+      display: block;
+      min-height: 10rem;
+      border: 2px dashed var(--line);
+      border-radius: 0.25rem;
+      background: var(--slot);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>De verkoper, van home naar share-artikel.</h1>
+
+    <p class="achtergrond">De verkoper opent Home, zoekt een bedrijf, opent het artikel en leest de chip.</p>
+
+    <ol class="stappen">
+      <li class="stap">
+        <h2>1. Home</h2>
+        <p>
+          Sidebar: Home, of de venture-naam. Route: <code>/</code>.
+          Op het scherm: offering, ICP, status, sectors.
+          Geen bedrijvenlijst.
+          <a href="https://leadtrigger-news-production.up.railway.app/">Open Home</a>
+        </p>
+        <div class="scherm" aria-label="Lege plek voor scherm Home"></div>
+      </li>
+
+      <li class="stap">
+        <h2>2. Browse companies</h2>
+        <p>
+          Sidebar: Browse companies. Route: <code>/companies</code>.
+          Opent op Ready. De verkoper klikt Search.
+          Een rij toont: Company, Country, Page, Fit, Urgency, Jev, Sector.
+          Page is Open of Not ready.
+          <a href="https://leadtrigger-news-production.up.railway.app/companies">Open Browse companies</a>
+        </p>
+        <div class="scherm" aria-label="Lege plek voor scherm Browse companies"></div>
+      </li>
+
+      <li class="stap">
+        <h2>3. Share-artikel</h2>
+        <p>
+          Open gaat naar <code>/share/article/{sleutel}</code>.
+          Header: Employees, Fit, Timing, Priority.
+          Daaronder: Why now, Your Brief, What to say, Contacts, Fit, Evidence trail, Coaching.
+        </p>
+        <div class="scherm" aria-label="Lege plek voor scherm share-artikel"></div>
+      </li>
+
+      <li class="stap">
+        <h2>4. Chip op het artikel</h2>
+        <p>
+          Er is geen reviewed-kolom op de lijst. Het dichtstbij is Page: Open of Not ready.
+          Op het artikel zelf staat een chip: Ready, Fit done, Urgency done, Outreach done, of Needs research.
+          Die chip is geen kolom.
+        </p>
+        <div class="scherm" aria-label="Lege plek voor chip op het artikel"></div>
+      </li>
+    </ol>
+  </main>
+</body>
+</html>
