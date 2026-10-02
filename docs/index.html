@@ -87,6 +87,25 @@
       border-radius: 0.25rem;
       background: var(--slot);
     }
+
+    a.scherm-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .scherm--beeld {
+      min-height: 0;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--slot);
+    }
+
+    .scherm--beeld img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -94,17 +113,18 @@
     <h1>De verkoper, van home naar share-artikel.</h1>
 
     <div class="achtergrond">
-      <p>Leadtrigger is het scherm van de verkoper. Op Home staat het aanbod van de venture: offering, ICP, status en sectoren. Daarna zoekt hij in Browse companies, alleen Ready. Open gaat naar één share-artikel.</p>
-      <p>Het telt omdat de verkoper niet leeg begint. Het artikel heeft die plekken, maar ze kunnen leeg zijn. De chip zegt hoe ver het is, niet dat Why now of What to say al gevuld zijn. Ready, Fit done, Urgency done, Outreach done of Needs research.</p>
-      <p>Wat er gebeurt: Home, zoeken, Open, artikel en chip. Inbox en cast zitten niet in deze demo. De CEO en de CMO zien dezelfde route als de verkoper.</p>
+      <p>Leadtrigger is de tool rond één venture. De verkoper heeft vijf ingangen. Home toont het aanbod: offering, ICP, status en sectoren. Share lists, Browse companies, News en Prepare one zijn de andere vier. Browse companies opent op Ready. De verkoper klikt Search. Page is Open of Not ready. Open gaat naar één share-artikel.</p>
+      <p>Het telt omdat hij niet leeg begint. Het artikel heeft plekken voor Why now, Your Brief, What to say, contacten, fit, het bewijs en coaching. Die plekken kunnen leeg zijn. De chip zegt hoe ver het artikel is: Ready, Fit done, Urgency done, Outreach done of Needs research. Niet dat de tekst al gevuld is.</p>
+      <p>Wat er in de demo gebeurt: Home, zoeken, Open, artikel en chip. Share lists, News en Prepare one horen bij de verkoper, maar zijn geen extra stappen in deze doorloop.</p>
+      <p>Achter het verkopersmenu zit de rest. Dat is admin, en dat lopen we nu niet door: watchlists, inbox, request watchlist, venture scores, match, import, cast, ventures en users.</p>
     </div>
 
     <ol class="stappen">
       <li class="stap">
         <h2>1. Home</h2>
         <p>
-          Sidebar: Home, of de venture-naam. Route: <code>/</code>.
-          Op het scherm: offering, ICP, status, sectors.
+          Zijbalk: Home, of de venture-naam. Route: <code>/</code>.
+          Offering, ICP, status, sectoren.
           Geen bedrijvenlijst.
           <a href="https://leadtrigger-news-production.up.railway.app/">Open Home</a>
         </p>
@@ -114,9 +134,9 @@
       <li class="stap">
         <h2>2. Browse companies</h2>
         <p>
-          Sidebar: Browse companies. Route: <code>/companies</code>.
-          Opent op Ready. De verkoper klikt Search.
-          Een rij toont: Company, Country, Page, Fit, Urgency, Jev, Sector.
+          Route: <code>/companies</code>.
+          Opent op Ready. Search.
+          Op de rij: Company, Country, Page, Fit, Urgency, Jev, Sector.
           Page is Open of Not ready.
           <a href="https://leadtrigger-news-production.up.railway.app/companies">Open Browse companies</a>
         </p>
@@ -127,18 +147,31 @@
         <h2>3. Share-artikel</h2>
         <p>
           Open gaat naar <code>/share/article/{sleutel}</code>.
-          Header: Employees, Fit, Timing, Priority.
-          Daaronder: Why now, Your Brief, What to say, Contacts, Fit, Evidence trail, Coaching.
+          In de kop: Employees, Fit, Timing, Priority.
+          Daaronder de plekken, die leeg kunnen zijn.
+          <a href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41">Open share-artikel</a>
         </p>
-        <div class="scherm" aria-label="Lege plek voor scherm share-artikel"></div>
+        <a
+          class="scherm-link"
+          href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41"
+        >
+          <div class="scherm scherm--beeld">
+            <img
+              src="share-artikel-iul-sa.png"
+              alt="share-artikel van IUL SA"
+              width="1024"
+              height="570"
+            >
+          </div>
+        </a>
       </li>
 
       <li class="stap">
         <h2>4. Chip op het artikel</h2>
         <p>
-          Er is geen reviewed-kolom op de lijst. Het dichtstbij is Page: Open of Not ready.
-          Op het artikel zelf staat een chip: Ready, Fit done, Urgency done, Outreach done, of Needs research.
-          Die chip is geen kolom.
+          Geen reviewed-kolom op de lijst.
+          Het dichtstbij is Page: Open of Not ready.
+          De chip is Ready, Fit done, Urgency done, Outreach done of Needs research.
         </p>
         <div class="scherm" aria-label="Lege plek voor chip op het artikel"></div>
       </li>
