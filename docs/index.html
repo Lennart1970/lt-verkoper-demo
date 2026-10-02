@@ -3,14 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>De verkoper, van home naar share-artikel.</title>
+  <title>Leadtrigger</title>
   <style>
     :root {
       --text: #1a1a1a;
       --muted: #555;
-      --line: #999;
       --bg: #f7f7f5;
-      --slot: #fff;
     }
 
     * {
@@ -39,143 +37,57 @@
       margin: 0 0 1rem;
     }
 
-    .achtergrond {
+    .intro {
       margin: 0 0 2rem;
       color: var(--muted);
     }
 
-    .achtergrond p {
-      margin: 0 0 0.85rem;
+    .intro p {
+      margin: 0;
     }
 
-    .achtergrond p:last-child {
+    section {
+      margin: 0 0 2rem;
+    }
+
+    section:last-of-type {
       margin-bottom: 0;
     }
 
-    ol.stappen {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-    }
-
-    .stap {
-      margin: 0;
-    }
-
-    .stap h2 {
-      font-size: 1.05rem;
+    h2 {
+      font-size: 1.15rem;
       font-weight: 700;
-      margin: 0 0 0.4rem;
-    }
-
-    .stap p {
       margin: 0 0 0.75rem;
+    }
+
+    section p {
+      margin: 0;
       color: var(--muted);
-    }
-
-    .stap a {
-      color: var(--text);
-    }
-
-    .scherm {
-      display: block;
-      min-height: 10rem;
-      border: 2px dashed var(--line);
-      border-radius: 0.25rem;
-      background: var(--slot);
-    }
-
-    a.scherm-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .scherm--beeld {
-      min-height: 0;
-      border: 1px solid var(--line);
-      overflow: hidden;
-      background: var(--slot);
-    }
-
-    .scherm--beeld img {
-      display: block;
-      width: 100%;
-      height: auto;
     }
   </style>
 </head>
 <body>
   <main>
-    <h1>De verkoper, van home naar share-artikel.</h1>
+    <h1>Leadtrigger</h1>
 
-    <div class="achtergrond">
-      <p>Leadtrigger is de tool rond één venture. De verkoper heeft vijf ingangen. Home toont het aanbod: offering, ICP, status en sectoren. Share lists, Browse companies, News en Prepare one zijn de andere vier. Browse companies opent op Ready. De verkoper klikt Search. Page is Open of Not ready. Open gaat naar één share-artikel.</p>
-      <p>Het telt omdat hij niet leeg begint. Het artikel heeft plekken voor Why now, Your Brief, What to say, contacten, fit, het bewijs en coaching. Die plekken kunnen leeg zijn. De chip zegt hoe ver het artikel is: Ready, Fit done, Urgency done, Outreach done of Needs research. Niet dat de tekst al gevuld is.</p>
-      <p>Wat er in de demo gebeurt: Home, zoeken, Open, artikel en chip. Share lists, News en Prepare one horen bij de verkoper, maar zijn geen extra stappen in deze doorloop.</p>
-      <p>Achter het verkopersmenu zit de rest. Dat is admin, en dat lopen we nu niet door: watchlists, inbox, request watchlist, venture scores, match, import, cast, ventures en users.</p>
+    <div class="intro">
+      <p>Leadtrigger is één programma voor één aanbod. Het aanbod is wat je verkoopt, voor wie, de status en de sectoren. Daaronder hangen bedrijven, een artikel per bedrijf, en nieuws.</p>
     </div>
 
-    <ol class="stappen">
-      <li class="stap">
-        <h2>1. Home</h2>
-        <p>
-          Zijbalk: Home, of de venture-naam. Route: <code>/</code>.
-          Offering, ICP, status, sectoren.
-          Geen bedrijvenlijst.
-          <a href="https://leadtrigger-news-production.up.railway.app/">Open Home</a>
-        </p>
-        <div class="scherm" aria-label="Lege plek voor scherm Home"></div>
-      </li>
+    <section>
+      <h2>De techniek</h2>
+      <p>Het artikel is een publieke pagina. Als je hem opent, komen de cijfers voor passen, timing en prioriteit op dat moment uit de gegevens. De tekst van het artikel wordt dan niet herschreven. De verkoper ziet vijf ingangen. De rest is beheer: cast, import, match, ventures en users.</p>
+    </section>
 
-      <li class="stap">
-        <h2>2. Browse companies</h2>
-        <p>
-          Route: <code>/companies</code>.
-          Opent op Ready. Search.
-          Op de rij: Company, Country, Page, Fit, Urgency, Jev, Sector.
-          Page is Open of Not ready.
-          <a href="https://leadtrigger-news-production.up.railway.app/companies">Open Browse companies</a>
-        </p>
-        <div class="scherm" aria-label="Lege plek voor scherm Browse companies"></div>
-      </li>
+    <section>
+      <h2>De flow</h2>
+      <p>Eerst het aanbod. Dan de bedrijven. Die komen binnen via de lijst, via import, of via Prepare one voor één naam en één domein. Een bedrijf is ready, of niet. In de lijst klik je Search. De pagina is dan Open of Not ready. Open is één artikel dat je kunt delen. News is een aparte rij: één bericht, drie vragen, en er gaat niets de deur uit. De vragen zijn: gaat dit over één bedrijf, past het bij je klanten, en is het nu of later. Beheer zit daarachter. Dat zijn cast, volglijsten en match.</p>
+    </section>
 
-      <li class="stap">
-        <h2>3. Share-artikel</h2>
-        <p>
-          Open gaat naar <code>/share/article/{sleutel}</code>.
-          In de kop: Employees, Fit, Timing, Priority.
-          Daaronder de plekken, die leeg kunnen zijn.
-          <a href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41">Open share-artikel</a>
-        </p>
-        <a
-          class="scherm-link"
-          href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41"
-        >
-          <div class="scherm scherm--beeld">
-            <img
-              src="share-artikel-iul-sa.png"
-              alt="share-artikel van IUL SA"
-              width="1024"
-              height="570"
-            >
-          </div>
-        </a>
-      </li>
-
-      <li class="stap">
-        <h2>4. Chip op het artikel</h2>
-        <p>
-          Geen reviewed-kolom op de lijst.
-          Het dichtstbij is Page: Open of Not ready.
-          De chip is Ready, Fit done, Urgency done, Outreach done of Needs research.
-        </p>
-        <div class="scherm" aria-label="Lege plek voor chip op het artikel"></div>
-      </li>
-    </ol>
+    <section>
+      <h2>De potentie</h2>
+      <p>Een verkoper begint bij een bedrijf dat al een pagina heeft, met dezelfde cijfers als in de gegevens. Die pagina is te delen. Share lists bundelt artikelen die ready zijn, met een publieke link en een link om de bundel te volgen. News scheidt marktnieuws, een bedrijf dat niet past, iets voor later, of een verhaallijn. Er wordt niets verstuurd. Prepare one zet research en een artikel in gang voor één bedrijf. Een ochtendlijst van een paar ready kaarten kan via een sleutel, zonder het wachtwoord van de gegevens.</p>
+    </section>
   </main>
 </body>
 </html>
