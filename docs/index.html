@@ -87,6 +87,25 @@
       border-radius: 0.25rem;
       background: var(--slot);
     }
+
+    a.scherm-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .scherm--beeld {
+      min-height: 0;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: var(--slot);
+    }
+
+    .scherm--beeld img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -129,8 +148,21 @@
           Open gaat naar <code>/share/article/{sleutel}</code>.
           Header: Employees, Fit, Timing, Priority.
           Daaronder: Why now, Your Brief, What to say, Contacts, Fit, Evidence trail, Coaching.
+          <a href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41">Open share-artikel</a>
         </p>
-        <div class="scherm" aria-label="Lege plek voor scherm share-artikel"></div>
+        <a
+          class="scherm-link"
+          href="https://leadtrigger-news-production.up.railway.app/share/article/c22ecd7c7be3681ec5814bde28996b41"
+        >
+          <div class="scherm scherm--beeld">
+            <img
+              src="share-artikel-iul-sa.png"
+              alt="share-artikel van IUL SA"
+              width="1024"
+              height="570"
+            >
+          </div>
+        </a>
       </li>
 
       <li class="stap">
